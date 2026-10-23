@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="MC-Petarh — event design and décor, Lagos">
-    <meta name="theme-color" content="#6b1a2f">
+    <meta name="theme-color" content=" #351116">
     <title>MC-Petarh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -281,10 +281,25 @@
                     <circle class="ring-path" cx="66" cy="66" r="64"></circle>
                     <circle class="ring-dot" cx="66" cy="2" r="2.6"></circle>
                 </svg>
-                <div class="mark" id="mark"><img src="banga.png" alt="" id="logo" onerror="this.parentNode.innerHTML='<span>MP</span>'"></div>
+                <div class="mark" id="mark"><img src="banga.png" alt="Logo-pic" id="logo" onerror="this.parentNode.innerHTML='<span>MP</span>'">
+                </div>
             </div>
-            <h1 class="brand" aria-label="MC-PETARH"><span class="mask" aria-hidden="true"><i style="--i:0">M</i><i style="--i:1">C</i><i style="--i:2">-</i><i style="--i:3">P</i><i style="--i:4">E</i><i style="--i:5">T</i><i style="--i:6">A</i><i style="--i:7">R</i><i style="--i:8">H</i></span></h1>
+            <h1 class="brand" aria-label="MC-PETARH"><span class="mask" aria-hidden="true">
+                <i style="--i:0">M</i>
+                <i style="--i:1">C</i>
+                <i style="--i:2">-</i>
+                <i style="--i:3">P</i>
+                <i style="--i:4">E</i>
+                <i style="--i:5">T</i>
+                <i style="--i:6">A</i>
+                <i style="--i:7">R</i>
+                <i style="--i:8">H</i>
+            </span>
+        </h1>
+            
+            <!-- This is the line that moves under the Logo+Pic -->
             <span class="line"></span>
+            <!-- The end -->
             <p class="tag">Event design &amp; décor · Lagos</p>
         </div>
     </main>
@@ -293,8 +308,8 @@
     /* ---------- Settings ---------- */
     var AUTO_REDIRECT = true;        // false = just show the cover page and stay on it
     var TARGET   = 'Landing.html';   // the page to open next
-    var MIN_MS   = 4000;             // how long the cover is shown before it scrolls up
-    var MAX_MS   = 7000;             // stop waiting for the next page after this long
+    var MIN_MS   = 9000;             // how long the cover is shown before it scrolls up
+    var MAX_MS   = 10000;             // stop waiting for the next page after this long
     var SLIDE_MS = 1150;             // matches the 1.1s slide in the CSS above
 
     var logo = document.getElementById('logo');
