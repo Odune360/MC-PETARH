@@ -11,6 +11,17 @@
 
 * {
     box-sizing: border-box;
+    --un-nav:#f8f2eb;
+    --un-nav-txt:#301d1b;
+    --un-btn:#681f2b;
+    --un-btn-txt:#ffffff;
+    --bgc:#351116;
+    --intro-txt:#e5bdb4;
+    --style-txt:#d9aaa0;
+    --talkmore:#fff5ef;
+    --deux-btn:#8c3744;
+    --foot-bgc:#796764;
+    --optional:#796764;
 }
 
 html {
@@ -78,6 +89,7 @@ a {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
+    font-size: 15.5px;
     color: var(--green);
 }
 
@@ -321,7 +333,12 @@ a {
     }
 
     .site-nav {
-        display: none;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        padding: 4px 0;
     }
 
     .header-cta {

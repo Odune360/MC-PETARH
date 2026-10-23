@@ -21,7 +21,19 @@
   :root[data-theme="dark"]{
     --paper:#17160F;--panel:#1E1D15;--ink:#EDE8DC;--muted:#A79E8B;--line:#332F22;--accent:#D7A67D;--accent-soft:#2A2118;
   }
-  *{box-sizing:border-box;}
+  *{box-sizing:border-box;
+    --un-nav:#f8f2eb;
+    --un-nav-txt:#301d1b;
+    --un-btn:#681f2b;
+    --un-btn-txt:#ffffff;
+    --bgc:#351116;
+    --intro-txt:#e5bdb4;
+    --style-txt:#d9aaa0;
+    --talkmore:#fff5ef;
+    --deux-btn:#8c3744;
+    --foot-bgc:#796764;
+    --optional:#796764;
+  }
   html,body{height:100%;}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype","Georgia",serif;-webkit-font-smoothing:antialiased;line-height:1.65;}
   .layout{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:260px minmax(0,1fr);gap:0;}

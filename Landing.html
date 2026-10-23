@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O-dune Devs">
-    <title>Landing Page</title>
+    <meta name="description" content="MC-Petarh event design and décor in Lagos and beyond.">
+    <title>MC-Petarh | Event Design &amp; Décor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="Landing.css">
 </head>
 <body>
-<section class="fst-cont" id="home">
+<section id="home">
     <!-- INTRO HEAD BAR -->
     <div class="head-cont">
     <header class="top-style">
@@ -23,31 +23,31 @@
         </div>
         <!-- The Navbar Section -->
         <nav class="frst-cont">
-                 <a href="#home">Home</a>
-                 <a href="#about">About</a>
-                 <a href="#service">Services</a>
+                <a href="#home" class="link-style">Home</a>
+                <a href="#about" class="link-style">About</a>
+                <a href="#service" class="link-style">Services</a>
         </nav>
         <!-- Intro-Button -->
-        <a href="booking-page.html" class="start-btn" target="_blank" rel="noopener noreferrer">Book a consultation</a>
+        <a href="booking-page.html" class="start-btn">Book a consultation</a>
     </header>
     </div>
     <!-- SECTION ONE BEGINS HERE -->
     <main class="snd-cont">
         <!-- THE SAMPLE PICS -->
         <div class="landing-img">
-            <img src="landing.jpg" alt="Model-Pic">
+            <img src="landing.jpg" alt="Colorful balloon décor at a children's celebration">
         </div>
         <!-- THE INTRO-TEXTS -->
         <div class="Text-cont">
             <div class="text-cont">
                 <p class="motto-text">LAGOS &amp; BEYOND</p>
-                <h1 class="Big-Text">Every event,<br>quietly extra <span class="inline">ordinary</span></h1>
+                <h1 class="Big-Text">Every event,<span class="inline"><br>quietly <br>extraordinary</span></h1>
                 <p class="Small-text">We design and style weddings, corporate lunches and private celebrations — from first sketch to final petal.</p>
                 </div>
                 <!-- DUO BUTTONS -->
                 <div class="cta-group">
-                    <a href="booking-page.html" class="book-btn" target="_blank" rel="noopener noreferrer">Book Now</a>
-                    <a href="#contact" class="view-btn">View Our Magic</a>
+                    <a href="booking-page.html" class="book-btn">Book Now</a>
+                    <a href="Showroom.html" class="view-btn">View Our Magic</a>
                 </div>
             </div>
         </div>
@@ -56,16 +56,65 @@
 <!-- THE ACHIEVEMENT AREA -->
     <footer class="feats-cont">
                             <div class="feats-amount">
-                            <h6>200+</h6><span class="small-text"><p>Events Styled</p></span>
+                                <h6>200+</h6>
+                                <p class="small-text">Events Styled</p>
                             </div>
                             <div class="feats-time">
-                                <h6>15yrs+</h6><span class="small-text"><p>In the industry</p></span>
+                                <h6>15yrs+</h6>
+                                <p class="small-text">In the industry</p>
                             </div>
                             <div class="feats-location">
-                                <h6>Lagos</h6><span class="small-text"><p>&amp; beyond</p></span>
+                                <h6>Lagos</h6>
+                                <p class="small-text">&amp; beyond</p>
                             </div>
     </footer>
-<section class="info-page" id="about">
+<section class="info-page about-cont" id="about" aria-labelledby="about-title">
+    <div class="about-wrap">
+        <img class="about-image" src="Background.png" alt="A wedding reception styled with floral lights and a dramatic chandelier">
+        <div class="about-copy">
+            <p class="motto-text">THOUGHTFUL EVENT DESIGN</p>
+            <h2 class="section-title" id="about-title">Made for your moment.</h2>
+            <p class="about-text">MC-Petarh designs and styles weddings, corporate lunches, birthdays and private celebrations in Lagos and beyond. We work with you from the first idea through the final details.</p>
+            <a class="book-btn" href="booking-page.html">Tell us about your event</a>
+        </div>
+    </div>
 </section>
+<section class="services-section" id="service" aria-labelledby="services-title">
+    <div class="services-wrap">
+        <p class="motto-text">WHAT WE STYLE</p>
+        <h2 class="section-title" id="services-title">Celebrations, thoughtfully brought together.</h2>
+        <div class="services-grid">
+            <article class="service-card">
+                <h3>Weddings</h3>
+                <p>Décor and styling shaped around your day, venue and vision.</p>
+                <a href="couple.html">Plan wedding décor</a>
+            </article>
+            <article class="service-card">
+                <h3>Birthdays</h3>
+                <p>Personalized settings for intimate gatherings and milestone celebrations.</p>
+                <a href="Bday.html">Plan birthday décor</a>
+            </article>
+            <article class="service-card">
+                <h3>Corporate events</h3>
+                <p>Considered event styling for corporate lunches and gatherings.</p>
+                <a href="Others.html">Discuss your event</a>
+            </article>
+            <article class="service-card">
+                <h3>Private celebrations</h3>
+                <p>Décor for anniversaries, showers, family gatherings and more.</p>
+                <a href="Party.html">Plan a celebration</a>
+            </article>
+        </div>
+    </div>
+</section>
+<footer class="landing-footer">
+    <a class="landing-footer-brand" href="#home">MC-Petarh</a>
+    <p>Event design and décor, based in Lagos.</p>
+    <nav aria-label="Footer navigation">
+        <a href="Showroom.html">Gallery</a>
+        <a href="Privacy.html">Privacy</a>
+        <a href="Terms.html">Terms</a>
+    </nav>
+</footer>
 </body>
 </html>
