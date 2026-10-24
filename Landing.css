@@ -312,7 +312,7 @@ html, body {
     display: block;
     font-family: "DM Sans", sans-serif;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 500;
     color: var(--un-nav-txt);
     letter-spacing: 0.02em;
     line-height: 1.4;
@@ -576,47 +576,13 @@ html, body {
 }
 
 
-/* This is the responsive section */
+/* ==========================================================
+   RESPONSIVE SECTION
+   Laptop / desktop (wider than 1100px) is NOT touched.
+   Everything below only applies to smaller screens.
+   ========================================================== */
 
-@media (max-width: 900px) {
-    .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .about-image {
-        height: 420px;
-    }
-}
-
-@media (max-width: 600px) {
-    .about-cont,
-    .services-section {
-        padding: 64px 20px;
-    }
-
-    .about-wrap {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
-    }
-
-    .about-image {
-        height: 360px;
-    }
-
-    .about-text {
-        font-size: 16px;
-    }
-
-    .services-grid {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .landing-footer {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-}
-/* Smaller screens only. The base rules above remain the laptop layout. */
+/* ---------- Small laptops / large tablets (kept as before) ---------- */
 @media (max-width: 1100px) {
     .top-style {
         gap: 16px;
@@ -662,84 +628,439 @@ html, body {
     }
 }
 
-@media (max-width: 850px) {
-    .top-style {
-        display: flex;
-        justify-content: space-between;
-        padding: 16px 24px 12px;
-        flex-wrap: wrap;
+/* ---------- TABLETS (up to 1024px) ----------
+   Two columns stay. The photo becomes a tall arch with a thin outline,
+   the headline never breaks inside a word, and the nav stays visible. */
+@media (max-width: 1024px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
     }
 
-    .frst-cont {
-        display: none;
+    #home,
+    #about,
+    #service {
+        scroll-margin-top: 96px;
     }
 
+    /* hero layout */
     .snd-cont {
-        min-height: 500px;
-        flex-direction: row;
+        min-height: 0;
         align-items: stretch;
-    }
-
-    .Text-cont,
-    .landing-img {
-        flex: 0 0 auto;
+        overflow: hidden;   /* keeps the photo's soft shadow inside the hero */
     }
 
     .Text-cont {
-        order: 1;
-        width: 55%;
-        padding: clamp(28px, 6vw, 48px) clamp(12px, 4vw, 40px) 28px clamp(16px, 5vw, 48px);
+        flex: 0 0 52%;
+        width: auto;
+        padding: clamp(32px, 5vw, 56px) clamp(16px, 3vw, 28px) 44px clamp(24px, 4vw, 44px);
     }
 
     .landing-img {
-        order: 2;
-        width: 45%;
-        padding: clamp(28px, 7vw, 56px) clamp(12px, 4vw, 40px) 12px 0;
+        flex: 0 0 48%;
+        width: auto;
+        margin: 0;
+        padding: clamp(32px, 5vw, 56px) clamp(24px, 4vw, 44px) 44px 14px;
     }
 
+    /* the photo: tall arch, whole picture visible, soft outline + depth */
     .landing-img img {
         width: 100%;
-        height: clamp(260px, 58vw, 520px);
-        min-height: 0;
+        height: auto;
+        aspect-ratio: 4 / 5;
         right: 0;
+        border-radius: 999px 999px 28px 28px;
+        object-position: 50% 52%;
+        box-shadow:
+            0 0 0 7px var(--bgc),
+            0 0 0 8px rgba(229, 189, 180, 0.45),
+            0 28px 60px rgba(0, 0, 0, 0.45);
     }
 
+    /* headline sized so "extraordinary" always fits on one line */
     .Big-Text {
         max-width: 100%;
-        font-size: clamp(2.8rem, 10vw, 5rem);
-        line-height: 1.08;
+        font-size: clamp(2.7rem, 7.4vw, 4.6rem);
+        line-height: 1.06;
+        letter-spacing: -0.035em;
+        word-break: normal;
+        overflow-wrap: normal;
     }
 
-    .fake-btn {
-        left: auto;
-        right: clamp(40px, 12vw, 100px);
-        bottom: 54px;
+    .Small-text {
+        font-size: 19px;
+        line-height: 1.55;
     }
 
-    .about-wrap {
-        grid-template-columns: 1fr;
+    .cta-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
     }
 
-    .about-image {
-        height: 420px;
+    .book-btn,
+    .view-btn {
+        margin: 0;
+        padding: 16px 34px;
+        font-size: 15px;
+    }
+
+    /* stats strip */
+    .feats-time,
+    .feats-location {
+        padding-left: 24px;
+    }
+
+    /* services: 2 roomy columns */
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* footer can wrap instead of squeezing */
+    .footer-style {
+        flex-wrap: wrap;
+        row-gap: 22px;
+        padding: 28px 32px 36px;
+    }
+
+    .handle-box {
+        margin-right: 0;
+    }
+
+    .footer-bottom {
+        padding: 18px 32px 0;
     }
 }
 
-@media (max-width: 600px) {
+/* ---------- Tablet portrait: about section stacks ---------- */
+@media (max-width: 900px) {
+    .about-cont {
+        padding: 64px 32px 72px;
+    }
+
+    .about-wrap {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .about-image {
+        height: auto;
+        aspect-ratio: 16 / 10;
+    }
+
+    .about-copy .motto-text {
+        margin-bottom: 0;
+    }
+}
+
+/* ---------- PHONES (smaller than a tablet, under 768px) ----------
+   Everything stacks. Photo = big arch under the text.
+   Every button sits on its own line and spreads the full width. */
+@media (max-width: 767px) {
+    #home,
+    #about,
+    #service {
+        scroll-margin-top: 104px;
+    }
+
+    /* header: logo + button on top, nav as an even row underneath */
     .top-style {
-        justify-content: flex-start;
-        gap: clamp(8px, 3vw, 18px);
-        padding: 14px 16px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px 12px;
+        padding: 12px 18px 6px;
     }
 
     .top-right-style {
+        flex: 1 1 auto;
+        gap: 10px;
         min-width: 0;
     }
 
     .logo {
-        flex-basis: 56px;
-        width: 56px;
-        height: 56px;
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+        line-height: 20px;
+        white-space: nowrap;
+    }
+
+    .start-btn {
+        margin: 0;
+        padding: 11px 16px;
+        font-size: 13px;
+        line-height: 18px;
+        text-align: center;
+        white-space: nowrap;
+        justify-self: auto;
+    }
+
+    .frst-cont {
+        order: 3;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
+        padding: 0;
+        border-top: 1px solid rgb(212, 201, 181);
+    }
+
+    .link-style {
+        flex: 1;
+        padding: 12px 6px;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    /* hero: stacked */
+    .snd-cont {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+    }
+
+    .Text-cont {
+        order: 1;
+        flex: none;
+        width: 100%;
+        padding: 34px 22px 6px;
+    }
+
+    .text-cont {
+        margin-bottom: 8px;
+    }
+
+    .motto-text {
+        width: auto;
+        max-width: none;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 16px;
+    }
+
+    .Big-Text {
+        font-size: clamp(2.6rem, 12.4vw, 4rem);
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+        margin-bottom: 18px;
+    }
+
+    .Small-text {
+        min-height: 0;
+        max-width: 36ch;
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    /* buttons: own line each, full width, bigger */
+    .cta-group {
+        display: grid;
+        gap: 12px;
+        min-height: 0;
+        margin-top: 26px;
+    }
+
+    .book-btn,
+    .view-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 58px;
+        margin: 0;
+        padding: 18px 28px;
+        font-size: 16px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .book-btn:active,
+    .view-btn:active {
+        transform: scale(0.98);
+    }
+
+    /* the photo: big arch, centred */
+    .landing-img {
+        order: 2;
+        flex: none;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 30px 26px 44px;
+        justify-content: center;
+    }
+
+    .landing-img img {
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        right: 0;
+        border-radius: 999px 999px 26px 26px;
+        object-position: 50% 52%;
+        box-shadow:
+            0 0 0 7px var(--bgc),
+            0 0 0 8px rgba(229, 189, 180, 0.45),
+            0 24px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    /* stats strip: three even, centred columns */
+    .feats-cont {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+        gap: 0;
+        padding: 20px 4px;
+    }
+
+    .feats-amount,
+    .feats-time,
+    .feats-location {
+        min-height: 0;
+        padding: 0 8px;
+        text-align: center;
+    }
+
+    .feats-amount h6,
+    .feats-time h6,
+    .feats-location h6 {
+        font-size: clamp(1.45rem, 7vw, 2rem);
+        white-space: nowrap;
+    }
+
+    .small-text {
+        max-width: none;
+        margin: 6px auto 0;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* about */
+    .about-cont {
+        padding: 56px 22px 64px;
+    }
+
+    .about-wrap {
+        gap: 26px;
+    }
+
+    .about-image {
+        aspect-ratio: 5 / 4;
+        border-radius: 22px;
+    }
+
+    .about-copy {
+        justify-items: stretch;
+        gap: 16px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+    }
+
+    .about-text {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    /* services: one card per row */
+    .services-section {
+        padding: 56px 22px 64px;
+    }
+
+    .services-wrap .motto-text {
+        margin-bottom: 14px;
+    }
+
+    .services-wrap > .section-title {
+        max-width: none;
+        margin-bottom: 24px;
+    }
+
+    .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .service-card {
+        gap: 10px;
+        padding: 22px 20px;
+    }
+
+    .service-card a {
+        padding: 6px 0;
+        font-size: 15px;
+    }
+
+    /* footer: stacked, easy to tap */
+    .site-footer {
+        margin-top: 0;
+    }
+
+    .footer-style {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 34px 22px 26px;
+    }
+
+    .footer-brand {
+        gap: 12px;
+        margin-left: 0;
+    }
+
+    .footer-logo-text {
+        font-size: 24px;
+    }
+
+    .handle-box {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 6px 22px;
+        margin-right: 0;
+        padding-bottom: 0;
+    }
+
+    .footer-link {
+        padding: 8px 0;
+    }
+
+    .social-links {
+        margin-left: auto;
+    }
+
+    .social-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 16px 22px calc(18px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0;
+    }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 380px) {
+    .top-style {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
     .logo-text {
@@ -747,175 +1068,44 @@ html, body {
     }
 
     .start-btn {
-        font-size: 12px;
-        line-height: 15px;
-        padding: 11px 14px;
-        margin-left: auto;
-        justify-self: auto;
-        text-align: center;
-    }
-
-    .frst-cont {
-        order: 3;
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        gap: 4px;
-        padding: 4px 0 0;
-    }
-
-    .link-style {
-        font-size: 13px;
-        padding-left: 8px;
-        padding-right: 8px;
+        padding: 10px 13px;
+        font-size: 12.5px;
     }
 
     .Text-cont {
-        padding: 40px 20px 28px;
-    }
-
-    .motto-text {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 24px;
-    }
-
-    .Big-Text {
-        font-size: clamp(2.8rem, 13vw, 4.25rem);
-        line-height: 1.08;
-        margin-bottom: 22px;
-    }
-
-    .Small-text {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .cta-group {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-    }
-
-    .book-btn,
-    .view-btn {
-        display: block;
-        width: 100%;
-        min-height: 48px;
-        padding: 14px 18px;
-        margin: 0;
-        text-align: center;
-        line-height: 18px;
-        white-space: nowrap;
-    }
-
-    .feats-cont {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        align-items: start;
-        column-gap: clamp(8px, 3vw, 24px);
-        row-gap: 0;
-        justify-content: space-between;
-        width: 100%;
-        padding: 8px 0;
-    }
-
-    .feats-amount,
-    .feats-time,
-    .feats-location {
-        width: 100%;
-        height: auto;
-        min-width: 0;
-        padding: 0 8px;
-    }
-
-    .feats-amount {
-        padding-left: 0;
-    }
-
-    .feats-location {
-        padding-right: 0;
-    }
-
-    .feats-amount h6,
-    .feats-time h6,
-    .feats-location h6 {
-        font-size: clamp(1.15rem, 6vw, 2.5rem);
-        line-height: 1.05;
-        white-space: nowrap;
-    }
-
-    .small-text {
-        font-size: 11px;
-        line-height: 1.3;
-        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
     .landing-img {
-        padding: 28px 20px 20px;
+        padding-left: 22px;
+        padding-right: 22px;
     }
 
-    .landing-img img {
-        height: 86vw;
-        min-height: 260px;
-        max-height: 420px;
-    }
-
-    .about-cont {
-        padding: 64px 20px 72px;
-    }
-
-    .about-image {
-        height: 360px;
-    }
-
-    .section-title {
-        font-size: 2.4rem;
-    }
-
-    .about-text {
-        font-size: 16px;
+    .about-cont,
+    .services-section {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 }
 
-@media (max-width: 380px) {
-    .top-style {
-        gap: 10px;
-    }
-
-    .book-btn,
-    .view-btn {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-
+@media (max-width: 340px) {
     .start-btn {
-        max-width: 132px;
+        max-width: 112px;
+        line-height: 1.2;
         white-space: normal;
     }
-
-    .fake-btn {
-        right: 20px;
-        bottom: 34px;
-        max-width: calc(100% - 40px);
-    }
-
-    .Big-Text {
-        font-size: 2.65rem;
-    }
-
-    .feats-cont {
-        column-gap: 8px;
-    }
-
-    .small-text {
-        font-size: 10px;
-    }
 }
 
-@media screen and (max-width: 400px) and (max-height: 554px) {
-    .fake-btn {
-        display: none;
+/* Touch screens: no "stuck" hover shifts after a tap */
+@media (hover: none) {
+    .service-card:hover {
+        transform: none;
+    }
+
+    .book-btn:hover,
+    .start-btn:hover,
+    .view-btn:hover {
+        transform: none;
     }
 }
