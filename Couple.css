@@ -947,13 +947,8 @@ html, body {
         grid-row: 1;
     }
 
-    .frst-cont {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 4px 0 0;
+    .frst-cont {       
+        display: none;
     }
 
     .start-btn {

@@ -1,3 +1,4 @@
+/* Needs Mobile responsiveness all through the page */
 * {
     box-sizing: border-box;
     --un-nav:#f8f2eb;
@@ -19,12 +20,9 @@ html, body {
     min-height: 100%;
 }
 .head-cont{
-    position: relative;
+    position: sticky;
     top: 0;
     z-index: 10;
-    border-bottom: 1px solid rgb(212,201, 181);
-    background-color: var(--un-nav);
-    color: var(--un-nav-txt);
 }
 .top-style{
     width: 100%;
@@ -33,6 +31,9 @@ html, body {
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
     column-gap: clamp(16px, 2.4vw, 32px);
+    border-bottom: 1px solid rgb(212,201, 181);
+    background-color: var(--un-nav);
+    color: var(--un-nav-txt);
 }
 .top-right-style{
     display: flex;
@@ -53,7 +54,7 @@ html, body {
     /* The Top text by the Right hand side */
     font-family: "Fraunces", serif;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     Line-height: 24px;
     letter-spacing: -0.4px;
     margin-right: 0px;
@@ -281,8 +282,8 @@ html, body {
 .feats-cont{
     font-family: "Fraunces", serif;
     font-size: 24px;
-    font-weight: 600;
-    color: var(--un-btn-txt);
+    font-weight: 400;
+    color: #6b6355;
     line-height: 32px;
     letter-spacing: 0px;
     display: flex;
@@ -295,12 +296,35 @@ html, body {
     padding-bottom: 20px;
     box-sizing: border-box;
     border-top: 1px solid rgb(212,201, 181);
-    background-color: #807b73;
+    border-bottom:1px solid rgb(212,201, 181);
+    background-color: var(--un-nav);
 }
-
+.feats-amount h6,
+.feats-time h6,
+.feats-location h6 {
+    margin: 0;
+    font-size: clamp(2.1rem, 2vw, 3.2rem);
+    line-height: 1;
+    font-weight: 470;
+    padding: 0px;
+}
+.small-text{
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--un-nav-txt);
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    min-height: 20px;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 6px;
+}
 .feats-amount{ 
     flex: 1;
     min-height: 30px;
+    padding-left: 20px;
     border-right: 1px solid #9caf97;
     box-sizing: border-box;
 }
@@ -317,74 +341,7 @@ html, body {
     min-height: 30px;
     box-sizing: border-box;
 }
-
-.feats-amount h6,
-.feats-time h6,
-.feats-location h6 {
-    margin: 0;
-    font-size: clamp(2.1rem, 2vw, 3.2rem);
-    line-height: 1;
-    font-weight: 600;
-    padding: 0px;
-}
-.small-text{
-    display: block;
-    font-family: "DM Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--un-nav-txt);
-    letter-spacing: 0.02em;
-    line-height: 1.4;
-    min-height: 20px;
-    width: 100%;
-    max-width: 200px;
-    margin-top: 6px;
-}
-
-.small-text p {
-    margin: 0;
-}
-.fake-btn{
-    position: absolute;
-    /* The function below 
-    is what controls the btn alignment on the page */
-    left: calc(46.6% + 10px);
-    /* This controls how far the object is from the ground */
-    bottom: 140px;
-    background: #1e3d35;
-    opacity: 0.7;
-    color: #F5F0E8;
-    border-radius: 28px;
-    padding: 16px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-.fst-text{
-    font-family: "DM Sans", sans-serif;
-    font-size: 18px;
-    line-height: 12px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: #f5f0f8;
-    opacity: 0.9;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-.snd-text{
-    font-family: "Fraunces", serif;
-    font-size: 10px;
-    line-height: 24px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    padding-top: 2px;
-    color: #f5f0f8;
-    text-align: center;
-    display: block;
-}
-
+/*  */
 /* Supporting sections complete the destinations used by the shared navigation. */
 .about-cont {
     padding: 96px clamp(20px, 8vw, 120px);
@@ -485,6 +442,12 @@ html, body {
     font-weight: 600;
     text-underline-offset: 4px;
 }
+/* Needs a softer hover effect? */
+.service-card:hover{
+    transform: translateY(9px);
+    transform: translateX(-3px);
+}
+/* The end */
 .site-footer {
    width: 100vw;
     margin-left: calc(50% - 50vw);
@@ -708,10 +671,7 @@ html, body {
     }
 
     .frst-cont {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        padding: 4px 0 0;
+        display: none;
     }
 
     .snd-cont {
@@ -900,26 +860,6 @@ html, body {
         height: 86vw;
         min-height: 260px;
         max-height: 420px;
-    }
-
-    .fake-btn {
-        right: clamp(20px, 8vw, 34px);
-        bottom: 42px;
-        max-width: calc(100% - 40px);
-        padding: 8px 10px;
-        border-radius: 14px;
-    }
-
-    .fst-text {
-        font-size: clamp(14px, 4vw, 18px);
-        line-height: 16px;
-        white-space: nowrap;
-    }
-
-    .snd-text {
-        font-size: 9px;
-        line-height: 18px;
-        white-space: nowrap;
     }
 
     .about-cont {
